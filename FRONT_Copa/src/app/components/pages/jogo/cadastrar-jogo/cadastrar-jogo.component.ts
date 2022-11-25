@@ -11,8 +11,8 @@ import { Jogo } from "src/app/models/jogo.model";
   styleUrls: ["./cadastrar-jogo.component.css"],
 })
 export class CadastrarJogoComponent implements OnInit {
-  selecaoA!: Selecao;
-  selecaoB!: Selecao;
+  timeA!: Selecao;
+  timeB!: Selecao;
   selecoes!: Selecao[];
 
   constructor(
@@ -32,10 +32,12 @@ export class CadastrarJogoComponent implements OnInit {
   }
 
   cadastrar(): void {
-    console.log(this.selecoes);
+    console.log(this.timeA);
+    console.log(this.timeB);
+    // Ao clicar cadastrar, pega o id do objeto
     let jogo: Jogo = {
-      selecaoA: this.selecoes.indexOf(this.selecaoA),
-      selecaoB: this.selecoes.indexOf(this.selecaoB),
+      selecaoA: this.timeA,
+      selecaoB: this.timeB,
     };
 
     this.http

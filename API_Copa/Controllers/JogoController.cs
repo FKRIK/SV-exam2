@@ -21,9 +21,19 @@ namespace api.Controllers
         {
             jogo.SelecaoA = _context.Selecoes.Find(jogo.SelecaoA.Id);
             jogo.SelecaoB = _context.Selecoes.Find(jogo.SelecaoB.Id);
+
             _context.Jogos.Add(jogo);
             _context.SaveChanges();
             return Created("", jogo);
+
+            // if (jogo.SelecaoA == _context.Selecoes.Find(jogo.SelecaoA.Id) && jogo.SelecaoB == _context.Selecoes.Find(jogo.SelecaoB.Id))
+            // {
+            //     _context.Jogos.Add(jogo);
+            //     _context.SaveChanges();
+            //     return Created("", jogo);
+            // }
+            // return BadRequest();
+            
         }
 
         [HttpGet]

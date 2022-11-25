@@ -6,7 +6,7 @@
     <mat-form-field class="input" id="nome">
       <mat-label for="sel_A">Seleção A:</mat-label>
 
-      <mat-select name="sel_A" id="sel_A" [(ngModel)]="selecaoA">
+      <mat-select name="sel_A" id="sel_A" [(ngModel)]="timeA">
         <mat-option *ngFor="let selecao of selecoes" value=" {{ selecao.id }} ">
           {{ selecao.nome }}
         </mat-option>
@@ -18,7 +18,7 @@
       <mat-label for="sel_B">Seleção B:</mat-label>
 
 
-      <mat-select name="sel_B" id="sel_B" [(ngModel)]="selecaoB">
+      <mat-select name="sel_B" id="sel_B" [(ngModel)]="timeB">
         <mat-option *ngFor="let selecao of selecoes" value=" {{ selecao.id }} ">
           {{ selecao.nome }}
         </mat-option>
