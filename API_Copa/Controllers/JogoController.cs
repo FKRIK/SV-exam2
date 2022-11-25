@@ -15,6 +15,7 @@ namespace api.Controllers
         public JogoController(Context context) =>
             _context = context;
 
+        // ----------- ORIGINAL -------------------------------------
         [HttpPost]
         [Route("cadastrar")]
         public IActionResult Cadastrar([FromBody] Jogo jogo)
@@ -25,16 +26,37 @@ namespace api.Controllers
             _context.Jogos.Add(jogo);
             _context.SaveChanges();
             return Created("", jogo);
-
-            // if (jogo.SelecaoA == _context.Selecoes.Find(jogo.SelecaoA.Id) && jogo.SelecaoB == _context.Selecoes.Find(jogo.SelecaoB.Id))
-            // {
-            //     _context.Jogos.Add(jogo);
-            //     _context.SaveChanges();
-            //     return Created("", jogo);
-            // }
-            // return BadRequest();
             
         }
+
+
+        // [HttpPost]
+        // [Route("cadastrar")]
+        // public IActionResult Cadastrar(ObjectResult id)
+        // {
+        //     var result = _context.Selecoes.FirstOrDefault(selecaoCadastrada => selecaoCadastrada.Id.Equals(id));
+
+        //     if(result == null){
+        //         return BadRequest();
+        //     } 
+        //     else{
+
+        //     }
+
+
+        //     _context.Jogos.Add(jogo);
+        //     _context.SaveChanges();
+        //     return Created("", jogo);
+
+        //     // if (jogo.SelecaoA == _context.Selecoes.Find(jogo.SelecaoA.Id) && jogo.SelecaoB == _context.Selecoes.Find(jogo.SelecaoB.Id))
+        //     // {
+        //     //     _context.Jogos.Add(jogo);
+        //     //     _context.SaveChanges();
+        //     //     return Created("", jogo);
+        //     // }
+        //     // return BadRequest();
+            
+        // }
 
         [HttpGet]
         [Route("listar")]

@@ -34,11 +34,13 @@ export class CadastrarJogoComponent implements OnInit {
   cadastrar(): void {
     console.log(this.timeA);
     console.log(this.timeB);
-    // Ao clicar cadastrar, pega o id do objeto
+    // Ao clicar cadastrar, pega o id das seleções
+
     let jogo: Jogo = {
       selecaoA: this.timeA,
       selecaoB: this.timeB,
     };
+    console.log(jogo);
 
     this.http
       .post<Jogo>("https://localhost:5001/api/jogo/cadastrar", jogo)
